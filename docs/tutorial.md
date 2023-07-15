@@ -8,7 +8,7 @@ site, such as a Vue or React App.
 
 ## A brief introduction to the components
 By the end of this project, we'll be hosting our website on AWS using 
-serveral different services, below is a little aboutthe roles they'll
+several different services, below is a little about the roles they'll
 play;
 
 ### S3
@@ -19,7 +19,7 @@ displaying a Hello World message.
 ### CloudFront
 AWS CloudFront is a Content Delivery Network (CDN). The CDN will be
 responsible for replicating our files from S3 into multiple regions.
-This lowers the the response time of the webiste, regardless of the
+This lowers the the response time of the website, regardless of the
 geographical location the user is accessing the site.
 
 ### Route53
@@ -29,14 +29,14 @@ loads your website in their browser it knows where to connect them to.
 
 ### Certificate Manager
 We'll use AWS Certificate Manager to generate an SSL certificate for our 
-website. If you don't know about the benefirst of SSL you can read more 
+website. If you don't know about the benefits of SSL you can read more 
 about them [here](https://www.https.in/blog/the-benefits-of-ssl-certificate/), 
 although, SSL / HTTPS is the standard and is almost universally expected by 
 consumers.
 
 ## Getting Started
 If you've not used Terraform before you'll need to install it on your machine 
-for this article. Instructions onhow to do this can be found on the Terraform 
+for this article. Instructions on how to do this can be found on the Terraform 
 website [here](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli).
 If you want to learn a bit more about what Terraform is, then have a read of 
 [this](https://developer.hashicorp.com/terraform/intro).
@@ -83,7 +83,7 @@ end user using SSL.
 ## Create an S3 Bucket
 We're going to use S3 to store the files used in our website. We'll begin by creating an 
 S3.tf file that will contain any Terraform commands performed against S3. This service by 
-service seperation allows us to quickly see what services a module accesses just by looking 
+service separation allows us to quickly see what services a module accesses just by looking 
 at the file structure and helps us keep individual files small. Terraform includes all .tf 
 files in the directory so you could use whatever method of sorting you prefer.
 
