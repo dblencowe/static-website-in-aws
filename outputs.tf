@@ -8,3 +8,7 @@ output "s3_information" {
         "upload_command" : module.website.content_upload_command
     }
 }
+
+output "cloudfront_distribution_id" {
+    value = module.website.cloudfront_distribution_id
+}
