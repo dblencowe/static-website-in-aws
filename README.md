@@ -8,7 +8,7 @@ In order to run this module in its entirety you must be able to validate the ACM
 Certificate using DNS validation, but DNS is configured as part of the this module.
 
 To bypass this restriction, you can create the Route53 Hosted Zone using the below 
-command and update your domains Name Servers using this (AWS Help Guide)[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-in-use.html#migrate-dns-change-name-servers-with-provider].
+command and update your domains Name Servers using this [AWS Help Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-in-use.html#migrate-dns-change-name-servers-with-provider).
 
 ```bash
 terraform apply -target=module.website.aws_route53_zone.primary
