@@ -91,8 +91,8 @@ files in the directory so you could use whatever method of sorting you prefer.
 touch modules/static-site/s3.tf
 ```
 
-Within this file we're going to define 4 resources; aws_s3_bucket, aws_s3_bucket_configuration,
-aws_s3_bucket_acl and aws_s3_bucket_policy. Together these 4 resources will create our S3 
+Within this file we're going to define 5 resources; aws_s3_bucket, aws_s3_bucket_configuration,
+aws_s3_bucket_acl, aws_s3_bucket_policy and aws_s3_bucket_ownership_controls. Together these 5 resources will create our S3 
 bucket and then apply the appropriate permissions for hosting a static website.
 
 ```tf
@@ -122,6 +122,13 @@ resource "aws_s3_bucket_acl" "website" {
 resource "aws_s3_bucket_policy" "website" {
     bucket = aws_s3_bucket.website.id
     policy = data.aws_iam_policy_document.website_policy.json 
+}
+
+resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership" {
+  bucket = aws_s3_bucket.website.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
 }
 ```
 
