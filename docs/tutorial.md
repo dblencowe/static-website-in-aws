@@ -345,6 +345,17 @@ resource "aws_route53_record" "cert_validation" {
 }
 ```
 
+## Create main.tf file
+Finally add the below to the main.tf file to tell terraform to run the static-site module and 
+pass the domain_name from the input.
+```tf
+module "website" {
+    source      = "./modules/static-site"
+    domain_name = var.domain_name
+}
+```
+
+
 Once created the Hosted Zone will be assigned 4 AWS Nameservers. To finalise setting up 
 the website you'll need to update your domains nameservers at it's registrar. AWS provides 
 helpful guide on how to do this [here](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-in-use.html#migrate-dns-change-name-servers-with-provider)
